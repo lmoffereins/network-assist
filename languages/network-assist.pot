@@ -1,0 +1,305 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-22 22:17+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco - https://localise.biz/"
+
+#: network-assist.php:218
+msgid "Network Assist plugin annotations"
+msgstr ""
+
+#: network-assist.php:240
+msgid "Network Assist theme annotations"
+msgstr ""
+
+#: includes/admin/admin.php:105 includes/admin/admin.php:130
+msgid "Sites"
+msgstr ""
+
+#: includes/admin/admin.php:110 includes/admin/admin.php:135
+msgid "Annotation"
+msgstr ""
+
+#: includes/admin/admin.php:158
+msgid "All sites"
+msgstr ""
+
+#. 1. Site name, 2. Theme name
+#: includes/admin/admin.php:223
+#, php-format
+msgid "The \"%1$s\" site uses \"%2$s\" as a parent theme."
+msgstr ""
+
+#: includes/annotations/plugins.php:49
+msgid "Network Assist Plugin Annotations"
+msgstr ""
+
+#: includes/annotations/plugins.php:50
+msgid "Plugin Annotations"
+msgstr ""
+
+#: includes/annotations/plugins.php:51
+msgid "Plugin Annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:52
+msgid "All Plugin Annotations"
+msgstr ""
+
+#: includes/annotations/plugins.php:53 includes/annotations/plugins.php:57
+msgid "New Plugin Annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:54
+msgid "Create New Plugin Annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:55 includes/annotations/themes.php:55
+msgid "Edit"
+msgstr ""
+
+#: includes/annotations/plugins.php:56
+msgid "Edit Plugin Annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:58 includes/annotations/plugins.php:59
+msgid "View Plugin Annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:60
+msgid "View Plugin Annotations"
+msgstr ""
+
+#: includes/annotations/plugins.php:61
+msgid "Search Plugin Annotations"
+msgstr ""
+
+#: includes/annotations/plugins.php:62 includes/annotations/themes.php:62
+msgid "No annotations found"
+msgstr ""
+
+#: includes/annotations/plugins.php:63 includes/annotations/themes.php:63
+msgid "No annotations found in Trash"
+msgstr ""
+
+#: includes/annotations/plugins.php:64 includes/annotations/themes.php:64
+msgid "Insert into annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:65 includes/annotations/themes.php:65
+msgid "Uploaded to this annotation"
+msgstr ""
+
+#: includes/annotations/plugins.php:66 includes/annotations/themes.php:66
+msgid "Filter annotations list"
+msgstr ""
+
+#: includes/annotations/plugins.php:67
+msgid "Plugin Annotations list navigation"
+msgstr ""
+
+#: includes/annotations/plugins.php:68
+msgid "Plugin Annotations list"
+msgstr ""
+
+#: includes/annotations/plugins.php:109
+msgid "Network Assist Plugin Categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:110
+msgid "Plugin Categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:111
+msgid "Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:112
+msgid "Search Plugin Categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:114
+msgid "All Plugin Categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:115
+msgid "No Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:116
+msgid "Edit Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:117
+msgid "Update Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:118
+msgid "Add New Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:119
+msgid "New Plugin Category Name"
+msgstr ""
+
+#: includes/annotations/plugins.php:120
+msgid "View Plugin Category"
+msgstr ""
+
+#: includes/annotations/plugins.php:122 includes/annotations/themes.php:122
+msgid "Separate categories with commas"
+msgstr ""
+
+#: includes/annotations/plugins.php:123 includes/annotations/themes.php:123
+msgid "Add or remove categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:124 includes/annotations/themes.php:124
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:125 includes/annotations/themes.php:125
+msgid "No categories found."
+msgstr ""
+
+#: includes/annotations/plugins.php:126 includes/annotations/themes.php:126
+msgid "No categories"
+msgstr ""
+
+#: includes/annotations/plugins.php:127
+msgid "Plugin categories list navigation"
+msgstr ""
+
+#: includes/annotations/plugins.php:128
+msgid "Plugin categories list"
+msgstr ""
+
+#: includes/annotations/themes.php:49
+msgid "Network Assist Theme Annotations"
+msgstr ""
+
+#: includes/annotations/themes.php:50
+msgid "Theme Annotations"
+msgstr ""
+
+#: includes/annotations/themes.php:51
+msgid "Theme Annotation"
+msgstr ""
+
+#: includes/annotations/themes.php:52
+msgid "All Theme Annotations"
+msgstr ""
+
+#: includes/annotations/themes.php:53 includes/annotations/themes.php:57
+msgid "New Theme Annotation"
+msgstr ""
+
+#: includes/annotations/themes.php:54
+msgid "Create New Theme Annotation"
+msgstr ""
+
+#: includes/annotations/themes.php:56
+msgid "Edit Theme Annotation"
+msgstr ""
+
+#: includes/annotations/themes.php:58 includes/annotations/themes.php:59
+msgid "View Theme Annotation"
+msgstr ""
+
+#: includes/annotations/themes.php:60
+msgid "View Theme Annotations"
+msgstr ""
+
+#: includes/annotations/themes.php:61
+msgid "Search Theme Annotations"
+msgstr ""
+
+#: includes/annotations/themes.php:67
+msgid "Theme Annotations list navigation"
+msgstr ""
+
+#: includes/annotations/themes.php:68
+msgid "Theme Annotations list"
+msgstr ""
+
+#: includes/annotations/themes.php:109
+msgid "Network Assist Theme Categories"
+msgstr ""
+
+#: includes/annotations/themes.php:110
+msgid "Theme Categories"
+msgstr ""
+
+#: includes/annotations/themes.php:111
+msgid "Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:112
+msgid "Search Theme Categories"
+msgstr ""
+
+#: includes/annotations/themes.php:114
+msgid "All Theme Categories"
+msgstr ""
+
+#: includes/annotations/themes.php:115
+msgid "No Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:116
+msgid "Edit Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:117
+msgid "Update Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:118
+msgid "Add New Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:119
+msgid "New Theme Category Name"
+msgstr ""
+
+#: includes/annotations/themes.php:120
+msgid "View Theme Category"
+msgstr ""
+
+#: includes/annotations/themes.php:127
+msgid "Theme categories list navigation"
+msgstr ""
+
+#: includes/annotations/themes.php:128
+msgid "Theme categories list"
+msgstr ""
+
+#. Name of the plugin
+msgid "Network Assist"
+msgstr ""
+
+#. Description of the plugin
+msgid "Supporting functions that help you manage your multisite network"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/lmoffereins/network-assist/"
+msgstr ""
+
+#. Author of the plugin
+msgid "Laurens Offereins"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://github.com/lmoffereins/"
+msgstr ""
