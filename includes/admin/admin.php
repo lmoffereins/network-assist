@@ -208,7 +208,8 @@ class Network_Assist_Admin {
 							} elseif ( 'template' === $type && ! in_array( $site, $sites['stylesheet'] ) ) {
 								printf( '<span class="site-template"><a href="%s" title="%s">%s</a></span>',
 									get_admin_url( $site->blog_id, 'themes.php' ),
-									esc_attr( sprintf( esc_html__( 'The "%s" site uses "%s" as a parent theme.', 'network-assist' ),
+									/* translators: 1. Site name, 2. Theme name */
+									esc_attr( sprintf( esc_html__( 'The "%1$s" site uses "%2$s" as a parent theme.', 'network-assist' ),
 										$site->blogname,
 										$data->name
 									) ),
