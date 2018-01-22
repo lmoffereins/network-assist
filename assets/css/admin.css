@@ -1,0 +1,20 @@
+/**
+ * Network Assist Admin Styles
+ *
+ * @package    Network Assist
+ * @subpackage Administration
+ */
+
+.widefat .column-nwas-sites {
+	width: 15%;
+}
+
+.widefat .column-nwas-sites .site-plugin,
+.widefat .column-nwas-sites .site-stylesheet,
+.widefat .column-nwas-sites .site-template {
+	display: block;
+}
+
+.widefat .column-nwas-sites .site-template {
+	font-style: italic;
+}
