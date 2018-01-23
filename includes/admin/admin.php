@@ -193,6 +193,11 @@ class Network_Assist_Admin {
 				// Sites activated
 				if ( array_filter( $sites ) ) {
 
+					// Remove sites using the theme both as stylesheet and template
+					$sites['template'] = array_udiff( $sites['template'], $sites['stylesheet'], function( $a, $b ) {
+						return $a->blog_id - $b->blog_id;
+					});
+
 					// Display sites
 					foreach ( $sites as $type => $_sites ) {
 						foreach ( $_sites as $site ) {
@@ -205,7 +210,7 @@ class Network_Assist_Admin {
 								);
 
 							// Display sites using theme as parent theme
-							} elseif ( 'template' === $type && ! in_array( $site, $sites['stylesheet'] ) ) {
+							} elseif ( 'template' === $type ) {
 								printf( '<span class="site-template"><a href="%s" title="%s">%s</a></span>',
 									get_admin_url( $site->blog_id, 'themes.php' ),
 									/* translators: 1. Site name, 2. Theme name */
