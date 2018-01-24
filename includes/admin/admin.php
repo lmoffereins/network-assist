@@ -224,8 +224,8 @@ class Network_Assist_Admin {
 							$link   = $is_template || $is_child_theme ? '<a href="%1$s" title="%2$s">%3$s</a>' : '<a href="%1$s">%3$s</a>';
 							$title  = $is_template
 								/* translators: 1. Site name, 2. Theme name, 3. Related theme name */
-								? esc_html__( 'The "%1$s" site uses "%2$s" as a parent theme for "%3$s".', 'network-assist' )
-								: esc_html__( 'The "%1$s" site uses "%2$s" as a child theme of "%3$s".',   'network-assist' );
+								? esc_html__( 'The %1$s site uses %2$s as a parent theme for %3$s.', 'network-assist' )
+								: esc_html__( 'The %1$s site uses %2$s as a child theme of %3$s.',   'network-assist' );
 
 							// Output link
 							printf( '<span class="' . $class . '">' . $link . '</span>',
