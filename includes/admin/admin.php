@@ -66,6 +66,7 @@ class Network_Assist_Admin {
 		add_filter( 'manage_themes-network_columns',  array( $this, 'theme_columns'         )        );
 		add_filter( 'manage_plugins_custom_column',   array( $this, 'plugin_column_content' ), 10, 3 );
 		add_filter( 'manage_themes_custom_column',    array( $this, 'theme_column_content'  ), 10, 3 );
+		add_filter( 'theme_row_meta',                 array( $this, 'theme_row_meta'        ), 10, 4 );
 	}
 
 	/** Public methods ********************************************************/
@@ -247,6 +248,40 @@ class Network_Assist_Admin {
 
 				break;
 		}
+	}
+
+	/**
+	 * Modify the theme meta in the list table
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array    $meta       Theme's metadata
+	 * @param  string   $stylesheet Theme slug
+	 * @param  WP_Theme $theme      Theme data
+	 * @param  string   $status     Theme status
+	 * @return array Theme row meta
+	 */
+	public function theme_row_meta( $meta, $stylesheet, $theme, $status ) {
+
+		// Mention child's parent theme
+		if ( $theme->parent_theme ) {
+			/* translators: %s: theme name */
+			$aria_label = sprintf( __( 'Visit %s homepage' ), $theme->parent_theme );
+
+			$item = sprintf(
+				esc_html__( 'Child theme of %s', 'network-assist' ),
+				sprintf( '<a href="%s" aria-label="%s">%s</a>',
+					$theme->parent()->display( 'ThemeURI' ),
+					esc_attr( $aria_label ),
+					$theme->parent_theme
+				)
+			);
+
+			// Insert after first item
+			array_splice( $meta, 1, 0, $item );
+		}
+
+		return $meta;
 	}
 }
 
