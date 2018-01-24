@@ -176,11 +176,11 @@ class Network_Assist_Admin {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param  string   $column Column name
-	 * @param  string   $theme  Theme slug
-	 * @param  WP_Theme $data   Theme data
+	 * @param  string   $column     Column name
+	 * @param  string   $stylesheet Theme slug
+	 * @param  WP_Theme $theme      Theme data
 	 */
-	public function theme_column_content( $column, $theme, $data ) {
+	public function theme_column_content( $column, $stylesheet, $theme ) {
 
 		switch ( $column ) {
 
@@ -188,7 +188,7 @@ class Network_Assist_Admin {
 			case 'nwas-sites' :
 
 				// Query sites
-				$sites = network_assist_theme_site_query( $theme );
+				$sites = network_assist_theme_site_query( $stylesheet );
 
 				// Sites activated
 				if ( array_filter( $sites ) ) {
@@ -213,7 +213,7 @@ class Network_Assist_Admin {
 							if ( $is_template ) {
 								$related_theme = wp_get_theme( get_blog_option( $site->blog_id, 'stylesheet' ) )->name;
 							} elseif ( $is_child_theme ) {
-								$related_theme = $data->parent_theme;
+								$related_theme = $theme->parent_theme;
 							} else {
 								$related_theme = '';
 							}
@@ -232,7 +232,7 @@ class Network_Assist_Admin {
 								get_admin_url( $site->blog_id, 'themes.php' ),
 								esc_attr( sprintf( $title,
 									$site->blogname,
-									$data->name,
+									$theme->name,
 									$related_theme
 								) ),
 								$site->domain
