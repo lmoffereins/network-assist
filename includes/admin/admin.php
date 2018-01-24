@@ -193,34 +193,50 @@ class Network_Assist_Admin {
 				// Sites activated
 				if ( array_filter( $sites ) ) {
 
-					// Remove sites using the theme both as stylesheet and template
+					// Keep a reference to all template themes to check for parent/child relationships
+					$_templates = $sites['template'];
+
+					// Remove sites using the theme both as stylesheet and template (standalone theme)
 					$sites['template'] = array_udiff( $sites['template'], $sites['stylesheet'], function( $a, $b ) {
-						return $a->blog_id - $b->blog_id;
+						return $a->blog_id !== $b->blog_id;
 					});
 
 					// Display sites
 					foreach ( $sites as $type => $_sites ) {
 						foreach ( $_sites as $site ) {
 
-							// Display sites using theme
-							if ( 'stylesheet' === $type ) {
-								printf( '<span class="site-stylesheet"><a href="%s">%s</a></span>',
-									get_admin_url( $site->blog_id, 'themes.php' ),
-									$site->domain
-								);
+							// Check theme usage type
+							$is_template    = $type === 'template';
+							$is_child_theme = $type === 'stylesheet' && ! in_array( $site, $_templates );
 
-							// Display sites using theme as parent theme
-							} elseif ( 'template' === $type ) {
-								printf( '<span class="site-template"><a href="%s" title="%s">%s</a></span>',
-									get_admin_url( $site->blog_id, 'themes.php' ),
-									/* translators: 1. Site name, 2. Theme name */
-									esc_attr( sprintf( esc_html__( 'The "%1$s" site uses "%2$s" as a parent theme.', 'network-assist' ),
-										$site->blogname,
-										$data->name
-									) ),
-									$site->domain
-								);
+							// Get related theme name
+							if ( $is_template ) {
+								$related_theme = wp_get_theme( get_blog_option( $site->blog_id, 'stylesheet' ) )->name;
+							} elseif ( $is_child_theme ) {
+								$related_theme = $data->parent_theme;
+							} else {
+								$related_theme = '';
 							}
+
+							// Setup link details
+							$class  = $is_template ? 'site-template parent-theme' : 'site-stylesheet';
+							$class .= $is_child_theme ? ' child-theme' : '';
+							$link   = $is_template || $is_child_theme ? '<a href="%1$s" title="%2$s">%3$s</a>' : '<a href="%1$s">%3$s</a>';
+							$title  = $is_template
+								? esc_html__( 'The "%1$s" site uses "%2$s" as a parent theme for "%3$s".', 'network-assist' )
+								: esc_html__( 'The "%1$s" site uses "%2$s" as a child theme of "%3$s".',   'network-assist' );
+
+							// Output link
+							printf( '<span class="' . $class . '">' . $link . '</span>',
+								get_admin_url( $site->blog_id, 'themes.php' ),
+								/* translators: 1. Site name, 2. Theme name, 3. Related theme name */
+								esc_attr( sprintf( $title,
+									$site->blogname,
+									$data->name,
+									$related_theme
+								) ),
+								$site->domain
+							);
 						}
 					}
 
