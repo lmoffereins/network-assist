@@ -154,9 +154,17 @@ class Network_Assist_Admin {
 
 				// Sites activated
 				} elseif ( $sites = network_assist_plugin_site_query( $plugin ) ) {
+					$limit = 5;
 
 					// Display sites
-					foreach ( $sites as $site ) {
+					foreach ( array_values( $sites ) as $k => $site ) {
+
+						// Limit list of sites
+						if ( $k === $limit ) {
+							echo '<span class="">' . esc_html( sprintf( _n( 'And %d more site', 'And %d more sites', count( $sites ) - $limit, 'network-assist' ), count( $sites ) - $limit ) ) . '</span>';
+							break;
+						}
+
 						printf( '<span class="site-plugin"><a href="%s">%s</a></span>',
 							get_admin_url( $site->blog_id, 'plugins.php' ),
 							$site->domain
