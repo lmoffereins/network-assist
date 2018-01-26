@@ -210,9 +210,23 @@ class Network_Assist_Admin {
 						return $a->blog_id !== $b->blog_id;
 					});
 
+					// Counts for limiting displayed sites
+					$limit   = 5;
+					$total   = array_reduce( $sites, function( $a, $b ) {
+						return $a + count( $b );
+					}, 0 );
+					$counter = -1;
+
 					// Display sites
 					foreach ( $sites as $type => $_sites ) {
 						foreach ( $_sites as $site ) {
+							$counter++;
+
+							// Limit list of sites
+							if ( $counter === $limit ) {
+								echo '<span class="sites-more">' . esc_html( sprintf( _n( 'And %d more site', 'And %d more sites', $total - $limit, 'network-assist' ), $total - $limit ) ) . '</span>';
+								break;
+							}
 
 							// Check theme usage type
 							$is_template    = $type === 'template';
