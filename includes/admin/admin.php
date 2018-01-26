@@ -161,7 +161,7 @@ class Network_Assist_Admin {
 
 						// Limit list of sites
 						if ( $k === $limit ) {
-							echo '<span class="">' . esc_html( sprintf( _n( 'And %d more site', 'And %d more sites', count( $sites ) - $limit, 'network-assist' ), count( $sites ) - $limit ) ) . '</span>';
+							echo '<span class="sites-more">' . esc_html( sprintf( _n( 'And %d more site', 'And %d more sites', count( $sites ) - $limit, 'network-assist' ), count( $sites ) - $limit ) ) . '</span>';
 							break;
 						}
 
